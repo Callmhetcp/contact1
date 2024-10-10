@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="practice.css">
+        <link rel="stylesheet" href="index.php">
+        <title>Document</title>
+
+        <style>
+            li {
+                padding: 10px;
+                background-color: aqua;
+                margin: 10px;
+                width: 200px;
+                list-style: none;
+            }
+
+            button{
+                padding: 10px;
+                width: 200px;
+                background-color: gray;
+                color: aliceblue;
+                border-radius: 10px 10px 10px 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <center>
+
+            <h2>To do list</h2>
+    
+            <ul>
+                <li>buy food</li>
+                <li>study</li>
+                <li>prepare for class</li>
+                <li>pray</li>
+            </ul>
+            
+            <button>add to do</button>
+          
+        </center>
+
+        
+    </body>
+
+    <script>
+
+        // const button = document.querySelector('button')
+
+        // button.addEventListener('click', ()=>{
+        //     console.log('you clicked me')
+        // })
+
+        const ul = document.querySelector('ul')
+        // ul.remove()
+
+        const button = document.querySelector('button')
+
+        button.addEventListener('click', ()=>{
+            const li = document.createElement('li');
+
+            li.textContent = 'something new to do'
+
+            ul.prepend(li)
+        });
+
+        // const items = document.querySelectorAll('li');
+
+        // items.forEach(item => {
+        //     item.addEventListener('click', e => {
+        //         // console.log(e.target)
+        //         console.log('li tag')
+        //         e.stopPropagation()
+               
+        //         e.target.remove()
+        //     })
+        // })
+
+        ul.addEventListener('click', e => {
+            // console.log(e.target)
+
+            if(e.target.tagName === 'LI'){
+
+                e.target.remove()
+            }
+        })
+       
+
+
+
+    </script>
+</html>

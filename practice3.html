@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            button{
+
+                display: block;
+                margin: 20px auto;
+                background-color: dodgerblue;
+                color: white;
+                border: 0;
+                padding: 6px 10px;
+
+            }
+
+            .popup-wrapper{
+                background-color: rgba(0,0, 0, 0.5);
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                display:none;
+            }
+
+            .popup{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 10px auto;
+                padding: 20px;
+                background: white;
+                position: relative;
+            }
+
+            .popup a{
+                background: dodgerblue;
+                color: white;
+                text-decoration: none;
+                padding: 6px 10px;
+            }
+
+            .popup-close{
+                position: absolute;
+                top: 5px;
+                right: 8px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+
+        <button>click me</button>
+
+        <div class="popup-wrapper">
+            <div class="popup">
+                <div class="popup-close">x</div>
+                <div class="popup-content">
+                    <h2>BonaseraKonnect Sales</h2>
+                    <p>50% discount on every gold you buy, dont miss out!!</p>
+                    <a href="#">view gold collection</a>
+                </div>
+            </div>
+        </div>
+
+        
+    </body>
+    <script>
+
+        const button = document.querySelector('button');
+        const popUp = document.querySelector('.popup-wrapper');
+        const close = document.querySelector('.popup-close');
+
+        button.addEventListener('click',() => {
+
+            popUp.style.display = 'block';
+        });
+
+        close.addEventListener('click', () => {
+
+            popUp.style.display = 'none';
+        });
+
+        popUp.addEventListener('click', () => {
+
+            popUp.style.display = 'none';
+        });
+
+        
+    </script>
+</html>
